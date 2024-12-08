@@ -33,7 +33,7 @@ for i, K in enumerate(K_values):
         LCR_results[i, j] = len(crossings) / time_duration  # Cruces por segundo
 
 # Graficar LCR vs. Factor K para cada umbral
-plt.figure()
+plt.figure(figsize=(8, 6))
 for j, threshold in enumerate(thresholds_dB):
     plt.plot(K_values, LCR_results[:, j], '-o', label=f'Umbral {threshold} dB')
 
@@ -41,5 +41,5 @@ plt.xlabel('Factor K')
 plt.ylabel('LCR (Cruces por segundo)')
 plt.title('LCR vs. Factor K para diferentes umbrales de potencia')
 plt.legend()
-plt.grid()
+plt.grid(True)
 plt.show()
